@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const RegisterForm = () => {
-    const backend_url = "https://college-projects-1.onrender.com";
+    const backend_url = "https://college-projects-1.onrender.com/student";
     const [showPassword, setShowPassword] = useState(false);
     const [name, setName] = useState('');
     const [rollNo, setRollNo] = useState('');
@@ -32,7 +32,7 @@ const RegisterForm = () => {
 
         if (response.data.success) {
             alert('Registration successful');
-            navigate('/login')
+            navigate('/')
         } else {
             console.log("registeration failed")
         }

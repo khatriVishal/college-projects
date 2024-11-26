@@ -3,7 +3,7 @@ import '../styles/login.css';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 const LoginPage = () => {
-    const backend_url = "https://college-projects-1.onrender.com";
+    const backend_url = "https://college-projects-1.onrender.com/student";
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [rollNo, setRollNo] = useState('');
@@ -13,6 +13,7 @@ const LoginPage = () => {
     };
 
     const handleSubmit = async (event) => {
+        console.log("yess");
         event.preventDefault();
         const loginData = {
             rollNo,
