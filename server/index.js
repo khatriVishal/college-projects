@@ -2,10 +2,11 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from 'cors';
 import StudentRoutes from "./routes.js"
-const PORT = 8000;
-
+import 'dotenv/config'
+// require('dotenv').config();
 const app = express();
-const MONGO_URI = 'mongodb://localhost:27017/STUDENT';
+const PORT = process.env.PORT || 5000;
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/STUDENT';
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
