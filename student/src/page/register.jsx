@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const RegisterForm = () => {
+    const backend_url = "https://college-projects-1.onrender.com";
     const [showPassword, setShowPassword] = useState(false);
     const [name, setName] = useState('');
     const [rollNo, setRollNo] = useState('');
@@ -26,7 +27,7 @@ const RegisterForm = () => {
             department
         };
         console.log(registrationData)
-        const response = await axios.post('http://localhost:8000/student/register', registrationData);
+        const response = await axios.post(`${backend_url}/register`, registrationData);
 
 
         if (response.data.success) {

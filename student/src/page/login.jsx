@@ -3,6 +3,7 @@ import '../styles/login.css';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 const LoginPage = () => {
+    const backend_url = "https://college-projects-1.onrender.com";
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
     const [rollNo, setRollNo] = useState('');
@@ -17,7 +18,7 @@ const LoginPage = () => {
             rollNo,
             password,
         };
-        const response = await axios.post('http://localhost:8000/student/login', loginData);
+        const response = await axios.post(`${backend_url}/login`, loginData);
 
         if (response.data.success) {
             console.log('Logged in student:', response.data);
